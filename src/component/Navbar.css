@@ -1,0 +1,60 @@
+/* Container - Positioned absolutely to float over the hero */
+.navbar-container {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  width: 90%;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  /* Adjust this height to match the vertical space of your navbar */
+  height: 50px; 
+  /* Maintains proportions so the logo doesn't stretch */
+  width: auto; 
+  /* Ensures it doesn't overflow the container */
+  display: block;
+}
+/* White Bar - Full width with rounded top-left corner */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+  background: white;
+  border-top-left-radius: 40px; 
+}
+
+/* Black Sub-bar - Tucked under the white bar */
+.sub-nav {
+  background: rgba(0, 0, 0, 0.85); /* Slightly transparent to show overlay */
+  color: rgb(255, 255, 255);
+  padding: 10px 5%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom-left-radius: 20px;
+  /* Margin-left pushes the black bar to the right, matching your image */
+  margin-left: 30%; 
+}
+
+.nav-links { display: flex; gap: 25px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 700; font-size: 14px; }
+.nav-links a.active { color: rgb(9, 58, 88); }
+
+.logo { font-weight: 900; font-size: 24px; line-height: 1; }
+.red-text { color: rgba(79, 63, 22, 0.733); display: block; }
+
+.nav-actions { display: flex; align-items: center; gap: 20px; }
+.cta-button {
+  background: rgb(4, 49, 83); color: white; border: none;
+  padding: 18px 30px; font-weight: bold; cursor: pointer;
+}
+
+.contact-info { display: flex; gap: 25px; font-size: 12px; }
+.contact-info span { display: flex; align-items: center; gap: 8px; }

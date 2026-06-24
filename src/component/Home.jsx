@@ -1,0 +1,361 @@
+import React from "react";
+import { useState, useEffect } from "react";
+
+import Slider from "react-slick";
+import "./Home.css";
+
+console.log("Slider =", Slider);
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const Home = () => {
+ const [activeIndex, setActiveIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
+ const images = [
+  "https://images.unsplash.com/photo-1595844730289-b248c919d6f9?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1aWxkZXJzfGVufDB8fDB8fHww",
+  "https://images.unsplash.com/photo-1652272161010-4d3b3aeb15ab?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGJ1aWxkZXJzfGVufDB8fDB8fHww",
+  "https://images.unsplash.com/photo-1693639435051-d58ac86db299?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGJ1aWxkZXJzfGVufDB8fDB8fHww",
+];
+
+const services = [
+  {
+    id: 1,
+    title: "Building Construction",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
+  },
+  {
+    id: 2,
+    title: "Architecture Design",
+    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2",
+  },
+  {
+    id: 3,
+    title: "Interior Design",
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+  },
+  {
+    id: 4,
+    title: "Factory Manufacture",
+    image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c",
+    active: true,
+  },
+  {
+    id: 5,
+    title: "Project Planning",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+  },
+  {
+    id: 6,
+    title: "Painting Services",
+    image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828",
+  },
+];
+const projects = [
+  { id: 1, title: "Hilix Compund Villa", category: "Construction", desc: "Lorem ipsum dolor sit amet...", img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
+  { id: 2, title: "Modern Skyscraper", category: "Architecture", desc: "Innovative design and structure...", img: "https://images.unsplash.com/photo-1527199768775-bdabf8b32f61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
+  // Add more as needed
+];
+
+const activeProject = projects[activeIndex];
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? services.length - 1 : prev - 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+ 
+
+// Inside your component:
+useEffect(() => {
+  const interval = setInterval(() => {
+    setActiveIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+  }, 4000); // Changes every 4 seconds
+  return () => clearInterval(interval);
+}, []);
+  
+  return (
+    <>
+      
+<section className="hero">
+  <img
+    src={images[current]}
+    alt="Hero"
+    className="hero-image"
+  />
+
+  <div className="overlay"></div>
+
+  <div className="hero-content">
+    <h1>Modern Construction Solutions</h1>
+    <p>Building your dream project with quality and trust.</p>
+  </div>
+</section>
+
+
+      {/* ABOUT SECTION */}
+
+      <section className="about">
+  <div className="about-left">
+    <div className="image-container">
+      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60" alt="Construction" />
+      {/* Overlay Box */}
+      <div className="experience-box">
+        <h3>34</h3>
+        <p>YEARS OF<br/>EXPERIENCE</p>
+      </div>
+      {/* Red Diagonal Strip */}
+      <div className="red-diagonal-strip"></div>
+    </div>
+  </div>
+
+  <div className="about-right">
+    <span className="subtitle">About Us</span>
+    <h2>We Will Satisfy You By Our Work Ideas</h2>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.</p>
+    
+    <div className="action-row">
+      <button className="read-more">Read More <span className="plus-icon">+</span></button>
+      <div className="contact-info">
+        <p>Call To Ask Any Question</p>
+        <h4>666 888 0000</h4>
+      </div>
+    </div>
+    
+    <img src="/path-to-signature.png" alt="Signature" className="signature" />
+  </div>
+</section>
+
+      {/* COUNTER SECTION */}
+
+      <section className="counter-section">
+        <div className="counter-box">
+          <h3>+3200</h3>
+          <p>Project Completed</p>
+        </div>
+
+        <div className="counter-box">
+          <h3>+500</h3>
+          <p>Work Employed</p>
+        </div>
+
+        <div className="counter-box">
+          <h3>+900</h3>
+          <p>Happy Customers</p>
+        </div>
+
+        <div className="counter-box">
+          <h3>+2800</h3>
+          <p>Painting Services</p>
+        </div>
+      </section>
+
+      {/* SERVICES TITLE */}
+    <section className="section-wrapper">
+
+  <div className="section-header">
+    <span>Our Services</span>
+    <h2>
+      We Provide For <br />
+      Superior Construction Service
+    </h2>
+  </div>
+
+  <section className="services-section">
+    <button className="carousel-btn" onClick={prevSlide}>
+      ❮
+    </button>
+
+    <div className="services-grid">
+      {services.slice(current, current + 3).map((service) => (
+        <div key={service.id} className="service-card">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="service-image"
+          />
+
+          <div className="card-content">
+            <h3>{service.title}</h3>
+            <p>{service.icon}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <button className="carousel-btn" onClick={nextSlide}>
+      ❯
+    </button>
+  </section>
+
+</section>
+
+
+          {/* PROJECT TITLE */}
+
+  {/* Added Headers */}
+  <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
+    <span style={{ color: 'red', fontWeight: 'bold', textTransform: 'uppercase' }}>
+      Our Recent Projects
+    </span>
+    <h2 style={{ fontSize: '40px', marginTop: '10px' }}>
+      Our Special Projects
+    </h2>
+  </div>
+<section className="projects-section">
+  <div className="project-content-wrapper" style={{ display: 'flex', gap: '60px', alignItems: 'center' }}>
+    {/* Left side: Text Details */}
+    <div className="project-left">
+      <span className="subtitle">{activeProject.category}</span>
+      <h2>{activeProject.title}</h2>
+      <p>{activeProject.desc}</p>
+      <button className="read-more">Read More +</button>
+      
+      {/* Thumbnails */}
+      <div className="thumbs">
+        {activeProject.thumbs.map((t, i) => <img key={i} src={t} alt="thumb" />)}
+      </div>
+    </div>
+
+    {/* Right side: Large Featured Image */}
+    <div className="project-right">
+      <img src={activeProject.img} alt="Main Project" className="featured-img" />
+    </div>
+  </div>
+</section>
+
+
+
+<section className="testimonial-section">
+  <div className="section-heading">
+    <span>Testimonials</span>
+    <h2>What Customers Say About Us</h2>
+  </div>
+
+  <div className="testimonial-wrapper">
+    <div className="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVpbGRlcnN8ZW58MHx8MHx8fDA%3D" alt="" />
+      <p>
+        Excellent construction company. Professional team and
+        outstanding quality work.
+      </p>
+      <h4>John Smith</h4>
+    </div>
+
+    <div className="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVpbGRlcnN8ZW58MHx8MHx8fDA%3D" alt="" />
+      <p>
+        Highly recommended. They completed our project on time
+        with great quality.
+      </p>
+      <h4>Michael James</h4>
+    </div>
+
+    <div className="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVpbGRlcnN8ZW58MHx8MHx8fDA%3D" alt="" />
+      <p>
+        Amazing experience working with their team. Very reliable.
+      </p>
+      <h4>Robert Wilson</h4>
+    </div>
+  </div>
+</section>
+<section className="news-section">
+  <div className="section-heading">
+    <span>Latest News</span>
+    <h2>Our Latest News & Articles</h2>
+  </div>
+
+  <div className="news-grid">
+    <div className="news-card">
+      <img src="https://plus.unsplash.com/premium_photo-1681823687646-e78d2da9b71a?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAxfHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D" alt="" />
+      <h3>Improve Workflow Using Construction Planning</h3>
+      <p>12 Dec 2026</p>
+    </div>
+
+    <div className="news-card">
+      <img src="https://images.unsplash.com/photo-1647735282077-c12699af40be?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D" alt="" />
+      <h3>Guide Remodeling Your Building Efficiently</h3>
+      <p>15 Dec 2026</p>
+    </div>
+  </div>
+</section>
+<section className="skills-section">
+  <div className="skills-left">
+    <span>Our Skills</span>
+
+    <h2>
+      Easy Way To Collaborate
+      <br />
+      Our Company
+    </h2>
+
+    <p>
+      We deliver construction excellence with quality and innovation.
+    </p>
+  </div>
+
+  <div className="skills-right">
+    <div className="skill">
+      <p>Industrial</p>
+      <div className="bar">
+        <div className="fill fill1"></div>
+      </div>
+    </div>
+
+    <div className="skill">
+      <p>Construction</p>
+      <div className="bar">
+        <div className="fill fill2"></div>
+      </div>
+    </div>
+
+    <div className="skill">
+      <p>Remodeling</p>
+      <div className="bar">
+        <div className="fill fill3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section className="quote-section">
+  <div className="quote-map">
+    <iframe
+      title="map"
+      src="https://maps.google.com/maps?q=kozhikode&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    ></iframe>
+  </div>
+
+  <div className="quote-form">
+    <span>Request Quote</span>
+
+    <h2>Request A Quote</h2>
+
+    <input type="text" placeholder="Your Name" />
+    <input type="email" placeholder="Email Address" />
+    <input type="text" placeholder="Phone Number" />
+
+    <textarea
+      rows="5"
+      placeholder="Message"
+    ></textarea>
+
+    <button>Submit Request</button>
+  </div>
+</section>
+    </>
+  );
+};
+
+export default Home;

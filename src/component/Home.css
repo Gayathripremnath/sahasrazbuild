@@ -1,0 +1,511 @@
+.hero {
+  position: relative;
+  height: 100vh;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.575);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  max-width: 600px;
+}
+/* ABOUT */
+.about {
+  display: flex;
+  gap: 80px;
+  padding: 100px 5%;
+  align-items: flex-start;
+}
+
+.about-left { position: relative; flex: 1; }
+
+/* The Experience Box Overlay */
+.experience-box {
+  position: absolute;
+  bottom: 80px;
+  right: -50px;
+  background: #111;
+  color: white;
+  padding: 30px;
+  border-radius: 40px 0 40px 0;
+  text-align: center;
+}
+.experience-box h3 { font-size: 48px; margin: 0; }
+
+/* Red Diagonal Strip */
+.red-diagonal-strip {
+  height: 20px;
+  background: rgb(8, 23, 33);
+  transform: skewX(-20deg);
+  margin-top: -10px;
+  width: 90%;
+}
+
+.about-right { flex: 1; }
+.subtitle { color: rgb(4, 33, 54); font-weight: 700; text-transform: uppercase; }
+.about-right h2 { font-size: 48px; margin: 20px 0; line-height: 1.2; }
+
+/* Read More Button with Plus */
+.read-more {
+  background: #eee;
+  padding: 15px 30px;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.plus-icon { background: rgb(3, 25, 62); color: white; padding: 2px 8px; }
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-info h4 { font-size: 24px; color: #111; }
+.signature { margin-top: 30px; width: 150px; }
+/* COUNTERS */
+.counter-section {
+  background: #1e1e1e; /* Dark grey/black background */
+  color: white;
+  width: 1350px;
+  text-align: center;
+  align-items: center;
+  padding: -8px ;
+  display: grid;
+  margin-left:  80px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  
+  /* This creates the rounded top-left corner seen in the image */
+  border-top-left-radius: 60px;
+  
+  /* Adds depth */
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-box {
+  text-align: center;
+  padding: 10px;
+}
+
+.counter-box h3 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+/* This creates the thin border box around the text */
+.counter-box p {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* TITLE */
+
+.section-title {
+  margin-top: 20px;
+  text-align: center;
+  padding: 120px 0 70px;
+}
+
+.section-title span {
+  color: rgb(22, 52, 94);
+}
+
+.section-title h2 {
+  font-size: 60px;
+  /* margin-top: 20px; */
+}
+
+.services-section-wrapper {
+  width: 100%;
+  padding: 80px 5%;
+}
+
+.section-header {
+  margin-top: 50px;
+  text-align: center;
+ 
+}
+
+.section-header span {
+  color: #021b3f;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-header h2 {
+  margin-top: 15px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111;
+}
+.services-section {
+  width: 100%;
+  padding: 80px 5%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.services-grid {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.service-card {
+  flex: 1;
+  max-width: 350px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.icon-overlay {
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: -25px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-content {
+  padding: 25px 20px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.read-more {
+  font-weight: bold;
+  border-bottom: 2px dashed #333;
+  margin-right: 10px;
+}
+
+.plus-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.service-card.active {
+  background: red;
+  color: white;
+}
+
+.service-card.active .read-more {
+  border-bottom-color: white;
+}
+
+.service-card.active .plus-btn {
+  background: white;
+  color: red;
+}
+
+/* Carousel Arrows */
+.carousel-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: rgb(1, 23, 42);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+/* --- Base Section --- */
+.projects-section {
+  display: flex;
+  width: 1350px;
+  gap: -70px;
+  padding: 100px 5%;
+  align-items: center;
+  background: #fff;
+  overflow: hidden; /* Important for the tilted images */
+}
+
+/* --- Left Side (Text) --- */
+.project-left { 
+ width: 500px;
+}
+.project-left .subtitle { color: rgb(4, 29, 80); font-weight: bold; text-transform: uppercase; }
+.project-left h2 { font-size: 45px; margin: 20px 0; }
+.project-left p { color: #666; line-height: 1.8; margin-bottom: 30px; }
+
+/* --- Right Side (Featured Image) --- */
+.project-right { flex: 1; position: relative; }
+
+.featured-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  /* This creates the professional tilt/skew effect */
+  transform: skewX(-5deg); 
+  border-radius: 10px;
+}
+
+/* --- Thumbnails --- */
+.thumbs {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.thumbs img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+/* Highlight the selected thumbnail */
+.thumbs img.active {
+  border-color: rgb(3, 27, 46);
+}
+
+/* --- Buttons --- */
+.read-more {
+  background: #eee;
+  border: none;
+  padding: 15px 30px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Custom "Plus" box for the button */
+.read-more span {
+  background: rgb(4, 30, 57);
+  color: white;
+  padding: 2px 8px;
+}
+.testimonial-section {
+  padding: 120px 100px;
+  background: #f8f8f8;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading span {
+  color: rgb(9, 42, 63);
+}
+
+.section-heading h2 {
+  font-size: 55px;
+}
+
+.testimonial-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.testimonial-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.testimonial-card p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.testimonial-card h4 {
+  margin-top: 20px;
+}
+.news-section {
+  padding: 120px 100px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.news-card {
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.news-card img {
+  width: 100%;
+}
+
+.news-card h3 {
+  padding: 20px;
+}
+
+.news-card p {
+  padding: 0 20px 20px;
+  color: #777;
+}
+.skills-section {
+  display: flex;
+  gap: 80px;
+  padding: 120px 100px;
+  background: #f5f5f5;
+}
+
+.skills-left,
+.skills-right {
+  flex: 1;
+}
+
+.skills-left span {
+  color: rgb(4, 34, 57);
+}
+
+.skills-left h2 {
+  font-size: 55px;
+  margin: 20px 0;
+}
+
+.bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  margin-top: 10px;
+}
+
+.fill {
+  height: 100%;
+  background: rgb(4, 43, 62);
+}
+
+.fill1 {
+  width: 65%;
+}
+
+.fill2 {
+  width: 85%;
+}
+
+.fill3 {
+  width: 75%;
+}
+.quote-section {
+  display: flex;
+  min-height: 650px;
+}
+
+.quote-map,
+.quote-form {
+  flex: 1;
+}
+
+.quote-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.quote-form {
+  background: #111;
+  color: white;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-form span {
+  color: rgb(1, 23, 43);
+}
+
+.quote-form h2 {
+  font-size: 50px;
+  margin: 20px 0 40px;
+}
+
+.quote-form input,
+.quote-form textarea {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: none;
+}
+
+.quote-form button {
+  background: rgb(6, 25, 51);
+  color: white;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+}
