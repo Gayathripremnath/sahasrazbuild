@@ -54,6 +54,8 @@ const services = [
 const projects = [
   { id: 1, title: "Hilix Compund Villa", category: "Construction", desc: "Lorem ipsum dolor sit amet...", img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
   { id: 2, title: "Modern Skyscraper", category: "Architecture", desc: "Innovative design and structure...", img: "https://images.unsplash.com/photo-1527199768775-bdabf8b32f61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
+  { id: 3, title: "Modern Skyscraper", category: "Architecture", desc: "Innovative design and structure...", img: "https://images.unsplash.com/photo-1527199768775-bdabf8b32f61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
+
   // Add more as needed
 ];
 
@@ -129,11 +131,10 @@ useEffect(() => {
       <button className="read-more">Read More <span className="plus-icon">+</span></button>
       <div className="contact-info">
         <p>Call To Ask Any Question</p>
-        <h4>666 888 0000</h4>
+        <h4>+9100000000</h4>
       </div>
     </div>
     
-    <img src="/path-to-signature.png" alt="Signature" className="signature" />
   </div>
 </section>
 
@@ -245,32 +246,32 @@ useEffect(() => {
 
   <div className="testimonial-wrapper">
     <div className="testimonial-card">
-      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVpbGRlcnN8ZW58MHx8MHx8fDA%3D" alt="" />
-      <p>
-        Excellent construction company. Professional team and
-        outstanding quality work.
-      </p>
+<svg className="user-icon" viewBox="0 0 24 24" width="80" height="80">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>
+     <p>Excellent construction company. Professional team and outstanding quality work.</p>
       <h4>John Smith</h4>
     </div>
 
     <div className="testimonial-card">
-      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVpbGRlcnN8ZW58MHx8MHx8fDA%3D" alt="" />
-      <p>
-        Highly recommended. They completed our project on time
-        with great quality.
-      </p>
+<svg className="user-icon" viewBox="0 0 24 24" width="80" height="80">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>  
+    <p>Highly recommended. They completed our project on time with great quality.</p>
       <h4>Michael James</h4>
     </div>
 
     <div className="testimonial-card">
-      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVpbGRlcnN8ZW58MHx8MHx8fDA%3D" alt="" />
-      <p>
-        Amazing experience working with their team. Very reliable.
-      </p>
+<svg className="user-icon" viewBox="0 0 24 24" width="80" height="80">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>
+       <p>Amazing experience working with their team. Very reliable.</p>
       <h4>Robert Wilson</h4>
     </div>
   </div>
 </section>
+
+
 <section className="news-section">
   <div className="section-heading">
     <span>Latest News</span>
