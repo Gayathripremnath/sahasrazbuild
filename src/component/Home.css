@@ -662,6 +662,9 @@ img { max-width: 100%; height: auto; }
   /* Spacing/Margins */
   .about, .testimonial-section, .news-section, .skills-section { padding: 60px 5%; }
   .experience-box { position: relative; bottom: 0; right: 0; margin-top: 20px; }
+  .section-heading h2 {
+  font-size: 30px;
+}
 }
 
 /* Extra Small Mobile (480px and below) */
@@ -669,6 +672,9 @@ img { max-width: 100%; height: auto; }
   .hero-content h1 { font-size: 28px; }
   .hero-content { left: 5%; }
   .section-title h2 { font-size: 40px; }
+  .section-heading h2 {
+  font-size: 25px;
+}
 }
 
 /* =========================
