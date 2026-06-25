@@ -129,10 +129,7 @@ useEffect(() => {
     
     <div className="action-row">
       <button className="read-more">Read More <span className="plus-icon">+</span></button>
-      <div className="contact-info">
-        <p>Call To Ask Any Question</p>
-        <h4>+9100000000</h4>
-      </div>
+      
     </div>
     
   </div>
@@ -203,41 +200,7 @@ useEffect(() => {
 </section>
 
 
-          {/* PROJECT TITLE */}
-
-  {/* Added Headers */}
- 
-<section className="projects-section">
-   <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
-    <span style={{ color: 'red', fontWeight: 'bold', textTransform: 'uppercase' }}>
-      Our Recent Projects
-    </span>
-    <h2 style={{ fontSize: '40px', marginTop: '10px' }}>
-      Our Special Projects
-    </h2>
-  </div>
-  
-  <div className="project-content-wrapper" style={{ display: 'flex', gap: '60px', alignItems: 'center' }}>
-    {/* Left side: Text Details */}
-    <div className="project-left">
-      <span className="subtitle">{activeProject.category}</span>
-      <h2>{activeProject.title}</h2>
-      <p>{activeProject.desc}</p>
-      <button className="read-more">Read More +</button>
-      
-      {/* Thumbnails */}
-      <div className="thumbs">
-        {activeProject.thumbs.map((t, i) => <img key={i} src={t} alt="thumb" />)}
-      </div>
-    </div>
-
-    {/* Right side: Large Featured Image */}
-    <div className="project-right">
-      <img src={activeProject.img} alt="Main Project" className="featured-img" />
-    </div>
-  </div>
-</section>
-
+   
 
 
 <section className="testimonial-section">
@@ -269,6 +232,43 @@ useEffect(() => {
   </svg>
        <p>Amazing experience working with their team. Very reliable.</p>
       <h4>Robert Wilson</h4>
+    </div>
+  </div>
+</section>
+
+
+
+       {/* PROJECT TITLE */}
+
+  {/* Added Headers */}
+ 
+<section className="projects-section">
+   <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
+    <span style={{ color: 'red', fontWeight: 'bold', textTransform: 'uppercase' }}>
+      Our Recent Projects
+    </span>
+    <h2 style={{ fontSize: '40px', marginTop: '10px' }}>
+      Our Special Projects
+    </h2>
+  </div>
+
+  <div className="project-content-wrapper" style={{ display: 'flex', gap: '60px', alignItems: 'center' }}>
+    {/* Left side: Text Details */}
+    <div className="project-left">
+      <span className="subtitle">{activeProject.category}</span>
+      <h2>{activeProject.title}</h2>
+      <p>{activeProject.desc}</p>
+      <button className="read-more">Read More +</button>
+      
+      {/* Thumbnails */}
+      <div className="thumbs">
+        {activeProject.thumbs.map((t, i) => <img key={i} src={t} alt="thumb" />)}
+      </div>
+    </div>
+
+    {/* Right side: Large Featured Image */}
+    <div className="project-right">
+      <img src={activeProject.img} alt="Main Project" className="featured-img" />
     </div>
   </div>
 </section>

@@ -45,9 +45,9 @@
 
 /* The Experience Box Overlay */
 .experience-box {
-  position: absolute;
-  bottom: 80px;
-  right: -50px;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
   background: #111;
   color: white;
   padding: 30px;
@@ -279,7 +279,8 @@
 /* --- Base Section --- */
 /* Projects Section Container */
 .projects-section {
-    background-color: #ffffff;
+  padding: 20px 9%;
+  background-color: #ffffff;
   overflow: hidden;
   
 }
@@ -409,7 +410,7 @@
   padding: 2px 8px;
 }
 .testimonial-section {
-  padding: 120px 100px;
+  padding: 20px 100px;
   background: #f8f8f8;
 }
 
@@ -592,7 +593,7 @@ img { max-width: 100%; height: auto; }
 
 /* Tablet & Smaller Laptops (1024px and below) */
 @media (max-width: 1024px) {
-  .about, .skills-section, .projects-section { flex-direction: column; gap: 40px; }
+  .about, .skills-section, .projects-section { flex-direction: column; gap: 20px; }
   .counter-section { grid-template-columns: repeat(2, 1fr); padding: 40px; }
   .testimonial-wrapper { grid-template-columns: repeat(2, 1fr); }
   .project-left { width: 100%; }
@@ -602,8 +603,53 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 768px) {
   /* Typography Scaling */
   .hero-content h1 { font-size: 40px; }
-  .about-right h2, .section-title h2, .section-header h2, .project-left h2 { font-size: 32px; }
-  
+  .about{
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 30px;
+  }
+
+  .about-left,
+  .about-right{
+    width: 100%;
+  }
+
+  .about-left img{
+    width: 100%;
+    display: block;
+  }
+
+  .about-right{
+    text-align: center;
+  }
+
+  .about-right h2{
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .action-row{
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .contact-info{
+    text-align: center;
+  }
+
+  .contact-info h4{
+    font-size: 22px;
+  }
+
+  .read-more{
+    justify-content: center;
+  }
+
+  .red-diagonal-strip{
+    width: 100px;
+    margin: 10px auto;
+  }
   /* Layout Stacking */
   .services-grid, .testimonial-wrapper, .news-grid { grid-template-columns: 1fr; }
   .services-grid { flex-direction: column; }
@@ -623,4 +669,294 @@ img { max-width: 100%; height: auto; }
   .hero-content h1 { font-size: 28px; }
   .hero-content { left: 5%; }
   .section-title h2 { font-size: 40px; }
+}
+
+/* =========================
+   LARGE DESKTOP (1400px+)
+========================= */
+@media (min-width: 1400px) {
+  .hero-content h1 {
+    font-size: 75px;
+  }
+
+  .section-header h2,
+  .section-title h2,
+  .project-left h2,
+  .skills-left h2 {
+    font-size: 60px;
+  }
+}
+
+/* =========================
+   LAPTOP (1200px)
+========================= */
+@media (max-width: 1200px) {
+
+  .hero-content h1 {
+    font-size: 55px;
+  }
+
+  .about,
+  .skills-section,
+  .project-content-wrapper {
+    gap: 40px;
+  }
+
+  .counter-section {
+    width: 100%;
+    margin: auto;
+  }
+
+  .featured-img {
+    height: 450px;
+  }
+}
+
+/* =========================
+   TABLET (1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .about,
+  .skills-section,
+  .project-content-wrapper {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    left: 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .about-right h2,
+  .section-title h2,
+  .section-header h2,
+  .project-left h2,
+  .skills-left h2,
+  .quote-form h2 {
+    font-size: 38px;
+  }
+
+  .counter-section {
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 30px;
+  }
+
+  .testimonial-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-img {
+    height: 400px;
+  }
+
+  .experience-box {
+    right: 0;
+  }
+}
+
+/* =========================
+   MOBILE (768px)
+========================= */
+@media (max-width: 768px) {
+
+  .hero {
+    height: 80vh;
+  }
+
+  .hero-image {
+    height: 80vh;
+  }
+
+  .hero-content {
+    left: 5%;
+    right: 5%;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .about,
+  .skills-section,
+  .testimonial-section,
+  .news-section,
+  .projects-section,
+  .quote-form {
+    padding: 60px 20px;
+  }
+
+  .about-right h2,
+  .section-title h2,
+  .section-header h2,
+  .project-left h2,
+  .skills-left h2,
+  .quote-form h2 {
+    font-size: 30px;
+  }
+
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    max-width: 100%;
+  }
+
+  .counter-section {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .testimonial-wrapper,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-section {
+    flex-direction: column;
+  }
+
+  .quote-form {
+    padding: 40px 20px;
+  }
+
+  .featured-img {
+    height: 300px;
+  }
+
+   .experience-box{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    padding: 12px 18px;
+    width: 170px;
+    margin: 20px auto;
+    margin-top: -20px;
+    border-radius: 20px 0 20px 0;
+  }
+
+  .experience-box h3{
+    font-size: 22px;
+  }
+
+  .experience-box p{
+    font-size: 11px;
+    margin-top: 5px;
+  }
+.red-diagonal-strip{
+    height: 12px;
+    width: 35%;
+    margin-top: -20px !important ;
+    margin: 10px auto 0;
+    transform: skewX(-15deg);
+  }
+  /* Thumbnail images */
+  .thumbs {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .thumbs img {
+    width: 70px;
+    height: 70px;
+  }
+   .counter-section{
+    width: 70% !important;
+    margin: 0 auto;
+    padding: 20px 10px;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+   .counter-box{
+    padding: 1px;
+  }
+
+
+}
+
+/* =========================
+   SMALL MOBILE (480px)
+========================= */
+@media (max-width: 480px) {
+
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-image {
+    height: 70vh;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .about-right h2,
+  .section-title h2,
+  .section-header h2,
+  .project-left h2,
+  .skills-left h2,
+  .quote-form h2 {
+    font-size: 24px;
+  }
+
+  .counter-box h3 {
+    font-size: 28px;
+  }
+
+  .counter-box p {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .testimonial-card,
+  .news-card {
+    padding: 20px;
+  }
+
+  .testimonial-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .featured-img {
+    height: 250px;
+  }
+
+  .experience-box {
+    padding: 10px;
+  }
+
+  .experience-box h3 {
+    font-size: 22px;
+  }
+
+  .thumbs img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
 }
