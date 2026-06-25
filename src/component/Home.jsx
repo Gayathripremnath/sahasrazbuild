@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "./Home.css";
 
-console.log("Slider =", Slider);
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,10 +11,28 @@ import "slick-carousel/slick/slick-theme.css";
 const Home = () => {
  const [activeIndex, setActiveIndex] = useState(0);
   const [current, setCurrent] = useState(0);
- const images = [
-  "https://images.unsplash.com/photo-1595844730289-b248c919d6f9?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1aWxkZXJzfGVufDB8fDB8fHww",
-  "https://images.unsplash.com/photo-1652272161010-4d3b3aeb15ab?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGJ1aWxkZXJzfGVufDB8fDB8fHww",
-  "https://images.unsplash.com/photo-1693639435051-d58ac86db299?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGJ1aWxkZXJzfGVufDB8fDB8fHww",
+const slides = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1595844730289-b248c919d6f9?auto=format&fit=crop&q=60",
+    title: "Modern Construction Solutions",
+    description:
+      "Building your dream project with quality and trust.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1652272161010-4d3b3aeb15ab?auto=format&fit=crop&q=60",
+    title: "Innovative Building Designs",
+    description:
+      "Creating modern spaces with excellence and innovation.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1693639435051-d58ac86db299?auto=format&fit=crop&q=60",
+    title: "Trusted Construction Experts",
+    description:
+      "Delivering high-quality projects on time and within budget.",
+  },
 ];
 
 const services = [
@@ -70,13 +87,7 @@ const activeProject = projects[activeIndex];
     );
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
  
 
 // Inside your component:
@@ -86,25 +97,37 @@ useEffect(() => {
   }, 4000); // Changes every 4 seconds
   return () => clearInterval(interval);
 }, []);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, []);
   
   return (
     <>
       
 <section className="hero">
   <img
-    src={images[current]}
-    alt="Hero"
+    src={slides[current].image}
+    alt={slides[current].title}
     className="hero-image"
   />
 
   <div className="overlay"></div>
 
   <div className="hero-content">
-    <h1>Modern Construction Solutions</h1>
-    <p>Building your dream project with quality and trust.</p>
+    <h1>{slides[current].title}</h1>
+
+    <p>{slides[current].description}</p>
+
+    <button className="view-project-btn">
+      View Projects
+    </button>
   </div>
 </section>
-
 
       {/* ABOUT SECTION */}
 
@@ -294,44 +317,67 @@ useEffect(() => {
     </div>
   </div>
 </section>
+
+
 <section className="skills-section">
   <div className="skills-left">
-    <span>Our Skills</span>
+    <span className="sub-title">Our Special Skills</span>
 
     <h2>
-      Easy Way To Collaborate
-      <br />
+      Easy Way To Collaborate <br />
       Our Company
     </h2>
 
     <p>
-      We deliver construction excellence with quality and innovation.
+      It is a long established fact that a reader will be distracted by
+      the readable content of a page when looking at its layout.
     </p>
-  </div>
 
-  <div className="skills-right">
     <div className="skill">
-      <p>Industrial</p>
+      <div className="skill-header">
+        <span>Industrial</span>
+        <span>65%</span>
+      </div>
       <div className="bar">
         <div className="fill fill1"></div>
       </div>
     </div>
 
     <div className="skill">
-      <p>Construction</p>
+      <div className="skill-header">
+        <span>Construction</span>
+        <span>85%</span>
+      </div>
       <div className="bar">
         <div className="fill fill2"></div>
       </div>
     </div>
 
     <div className="skill">
-      <p>Remodeling</p>
+      <div className="skill-header">
+        <span>Remodeling</span>
+        <span>75%</span>
+      </div>
       <div className="bar">
         <div className="fill fill3"></div>
       </div>
     </div>
+
+    <button className="contact-btn">
+      Contact Now <span>+</span>
+    </button>
+  </div>
+
+  <div className="skills-right">
+    <img src="https://images.unsplash.com/photo-1778074762033-c6595907684d?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGJ1aWxkZXJzJTIwcHJvamVjdHxlbnwwfHwwfHx8Mg%3D%3D" alt="" />
+    <img src="https://images.unsplash.com/photo-1765706845871-951abd038627?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGJ1aWxkZXJzJTIwcHJvamVjdHxlbnwwfHwwfHx8Mg%3D%3D" alt="" />
+    <img src="https://images.unsplash.com/photo-1693639435051-d58ac86db299?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1aWxkZXJzJTIwcHJvamVjdHxlbnwwfHwwfHx8Mg%3D%3D" alt="" />
+    <img src="https://images.unsplash.com/photo-1713593930871-e21d7f9ef4a1?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1aWxkZXJzfGVufDB8fDB8fHwy" alt="" />
   </div>
 </section>
+
+
+
 <section className="quote-section">
   <div className="quote-map">
     <iframe
