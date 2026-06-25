@@ -279,8 +279,7 @@
 /* --- Base Section --- */
 /* Projects Section Container */
 .projects-section {
-  padding: 20px 9%;
-  background-color: #ffffff;
+    background-color: #ffffff;
   overflow: hidden;
   
 }
