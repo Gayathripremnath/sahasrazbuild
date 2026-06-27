@@ -48,8 +48,8 @@ const Footer = () => {
 
       {/* Copyright Bar */}
       <div className="footer-bottom">
-        <p>Copyright © 2026 Construction. All rights reserved.</p>
-        <div className="social-icons">🌐 ➕ 🐦 👤 📍</div>
+        <p>Copyright ©GENOVA TECHNOLOGIES 2026 . All rights reserved.</p>
+        <div className="social-icons"></div>
       </div>
     </footer>
   );
