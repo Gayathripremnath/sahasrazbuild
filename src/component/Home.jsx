@@ -1,5 +1,7 @@
 import React from "react";
+import { FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect } from "react";
+import { motion, useSpring, useTransform, useMotionValue } from 'framer-motion';
 
 import Slider from "react-slick";
 import "./Home.css";
@@ -8,7 +10,21 @@ import "./Home.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+
+ const AnimatedCounter = ({ value }) => {
+  const spring = useSpring(0, { duration: 2 });
+  const display = useTransform(spring, (current) => Math.round(current));
+
+  React.useEffect(() => {
+    spring.set(value);
+  }, [value, spring]);
+
+  return <motion.span>{display}</motion.span>;
+};
+
 const Home = () => {
+ 
  const [activeIndex, setActiveIndex] = useState(0);
   const [current, setCurrent] = useState(0);
 const slides = [
@@ -34,7 +50,29 @@ const slides = [
       "Delivering high-quality projects on time and within budget.",
   },
 ];
-
+const data = [
+    {
+      id: 1,
+      text: "This is due to their excellent service, competitive pricing and customer support. It's thoroughly refreshing to get new such a personal touch.",
+      name: "Mario Prince",
+      role: "Marketing Manager",
+      image: "https://static.vecteezy.com/system/resources/thumbnails/022/133/672/small/user-profile-icon-for-any-purposes-vector.jpg"
+    },
+    {
+      id: 2,
+      text: "This is due to their excellent service, competitive pricing and customer support. It's thoroughly refreshing to get new such a personal touch.",
+      name: "Moni Makra",
+      role: "Business Man",
+      image: "https://static.vecteezy.com/system/resources/thumbnails/022/133/672/small/user-profile-icon-for-any-purposes-vector.jpg"
+    },
+    {
+      id: 3,
+      text: "This is due to their excellent service, competitive pricing and customer support. It's thoroughly refreshing to get new such a personal touch.",
+      name: "Arnika Rara",
+      role: "CEO",
+      image: "https://static.vecteezy.com/system/resources/thumbnails/022/133/672/small/user-profile-icon-for-any-purposes-vector.jpg"
+    }
+  ];
 const services = [
   {
     id: 1,
@@ -227,38 +265,50 @@ useEffect(() => {
 
 
 <section className="testimonial-section">
-  <div className="section-heading">
-    <span>Testimonials</span>
-    <h2>What Customers Say About Us</h2>
-  </div>
+      <div className="testimonial-container">
+        {/* Header Section */}
+        <div className="testimonial-header">
+          <div className="header-left">
+            <div className="red-bars">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span className="subtitle">Testimonial For Us</span>
+            <h2 className="title">What Coustomer Says <br /> About Us</h2>
+          </div>
+          
+          <div className="header-right">
+            <button className="nav-btn"><FaChevronLeft /></button>
+            <button className="nav-btn"><FaChevronRight /></button>
+          </div>
+        </div>
 
-  <div className="testimonial-wrapper">
-    <div className="testimonial-card">
-<svg className="user-icon" viewBox="0 0 24 24" width="80" height="80">
-    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-  </svg>
-     <p>Excellent construction company. Professional team and outstanding quality work.</p>
-      <h4>John Smith</h4>
-    </div>
-
-    <div className="testimonial-card">
-<svg className="user-icon" viewBox="0 0 24 24" width="80" height="80">
-    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-  </svg>  
-    <p>Highly recommended. They completed our project on time with great quality.</p>
-      <h4>Michael James</h4>
-    </div>
-
-    <div className="testimonial-card">
-<svg className="user-icon" viewBox="0 0 24 24" width="80" height="80">
-    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-  </svg>
-       <p>Amazing experience working with their team. Very reliable.</p>
-      <h4>Robert Wilson</h4>
-    </div>
-  </div>
-</section>
-
+        {/* The Cards Grid (Hanging Section) */}
+        <div className="testimonial-grid">
+          {data.map((item) => (
+            <div className="testimonial-card" key={item.id}>
+              {/* Quote Icon */}
+              <div className="quote-box">
+                <FaQuoteRight />
+              </div>
+              
+              <p className="testimonial-text">{item.text}</p>
+              
+              <div className="divider"></div>
+              
+              <div className="profile-info">
+                <img src={item.image} alt={item.name} className="profile-img" />
+                <div className="profile-details">
+                  <h4>{item.name}</h4>
+                  <span>{item.role}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
 
        {/* PROJECT TITLE */}
