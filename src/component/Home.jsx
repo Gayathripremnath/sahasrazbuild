@@ -172,7 +172,7 @@ useEffect(() => {
       <section className="about">
   <div className="about-left">
     <div className="image-container">
-      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&auto=format&fit=crop&q=60" alt="Construction" />
+      <img src="https://images.unsplash.com/photo-1690473768476-44b5cebb7d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTl8fGJ1aWxkZXJzfGVufDB8fDB8fHww" alt="Construction" />
       {/* Overlay Box */}
       <div className="experience-box">
         <h3>34</h3>
@@ -186,7 +186,11 @@ useEffect(() => {
   <div className="about-right">
     <span className="subtitle">About Us</span>
     <h2>We Will Satisfy You By Our Work Ideas</h2>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.</p>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo numquam eaque unde, atque quo quas facilis? Amet quia mollitia eveniet aliquam non tenetur perferendis reprehenderit ut, ullam illum deleniti facere.
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla eum maxime quam eaque molestias! Perspiciatis a ea voluptas animi, exercitationem iure saepe soluta. Nostrum asperiores fuga voluptatibus in voluptate dolor.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ex unde autem veritatis voluptate minima non rerum provident rem, quaerat a dignissimos voluptatem quis consectetur, nesciunt ut nam quia illo.
+    </p>
     
     <div className="action-row">
       <button className="read-more">Read More <span className="plus-icon">+</span></button>
