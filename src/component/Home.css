@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
 
-
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Nunito Sans', sans-serif;
@@ -242,7 +248,7 @@ body {
 
 .section-wrapper{
     width:100%;
-    padding:80px 50px;
+    padding:10px 50px;
     background:#fff;
 }
 
@@ -809,7 +815,7 @@ height:260px;
 }
 
 .news-section {
-  padding: 120px 100px;
+  padding: 0px 100px;
 }
 
 .news-grid {
