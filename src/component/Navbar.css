@@ -117,3 +117,172 @@
   .nav-actions { display: none; } /* Hide actions on mobile for space */
   .sub-nav { margin-left: 0; justify-content: center; font-size: 10px; }
 }
+/* ===========================
+   1200px
+=========================== */
+
+@media (max-width:1200px){
+
+.navbar-container{
+left:5%;
+width:90%;
+}
+
+.nav-links{
+gap:25px;
+}
+
+.cta-button{
+padding:15px 24px;
+}
+
+.sub-nav{
+margin-left:25%;
+width:75%;
+}
+
+.contact-info{
+gap:20px;
+font-size:14px;
+}
+
+}
+
+
+/* ===========================
+   992px
+=========================== */
+
+@media (max-width:992px){
+
+.navbar-container{
+left:3%;
+width:94%;
+top:20px !important;
+}
+
+.logo img{
+height:45px;
+}
+
+.nav-links{
+gap:18px;
+}
+
+.nav-links a{
+font-size:15px;
+}
+
+.cta-button{
+padding:14px 18px;
+font-size:14px;
+}
+
+.sub-nav{
+margin-left:0;
+width:100%;
+justify-content:center;
+border-bottom-left-radius:0;
+}
+
+.contact-info{
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+font-size:13px;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.navbar-container{
+position:absolute;
+left:15px;
+top:15px !important;
+width:calc(100% - 30px);
+}
+
+.top-nav{
+padding:15px 20px;
+border-radius:15px;
+position:relative;
+}
+
+.logo img{
+height:40px;
+}
+
+.menu-toggle{
+display:block;
+font-size:30px;
+cursor:pointer;
+}
+
+.nav-actions{
+display:none;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#fff;
+flex-direction:column;
+align-items:center;
+gap:18px;
+padding:25px 0;
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+z-index:999;
+}
+
+.nav-links.open{
+display:flex;
+}
+
+.nav-links a{
+font-size:17px;
+}
+
+.sub-nav{
+display:none;
+}
+
+}
+
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width:480px){
+
+.navbar-container{
+left:10px;
+width:calc(100% - 20px);
+}
+
+.top-nav{
+padding:12px 15px;
+}
+
+.logo img{
+height:34px;
+}
+
+.menu-toggle{
+font-size:28px;
+}
+
+.nav-links a{
+font-size:16px;
+}
+
+}

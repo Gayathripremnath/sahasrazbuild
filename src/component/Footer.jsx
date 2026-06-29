@@ -50,7 +50,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>Copyright © 2026 Construction. All rights reserved.</p>
+        <p>Copyright © 2026 . "GENOVA TECHNOLOGIES". All rights reserved.</p>
         <div className="social-icons">
           <FaGlobe /> <FaGooglePlusG /> <FaTwitter /> <FaFacebookF /> <FaPinterestP />
         </div>

@@ -1,30 +1,46 @@
 import React from "react";
+// import CountUp  from "react-countup";
+// import { useInView } from "react-intersection-observer";
 import { FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect } from "react";
-import { motion, useSpring, useTransform, useMotionValue } from 'framer-motion';
+import { motion, useSpring, useTransform } from 'framer-motion';
 
-import Slider from "react-slick";
 import "./Home.css";
 
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-
- const AnimatedCounter = ({ value }) => {
-  const spring = useSpring(0, { duration: 2 });
-  const display = useTransform(spring, (current) => Math.round(current));
+const AnimatedCounter = ({ end, duration = 2000 }) => {
+  const [count, setCount] = React.useState(0);
 
   React.useEffect(() => {
-    spring.set(value);
-  }, [value, spring]);
+    let start = 0;
+    const increment = end / (duration / 16);
 
-  return <motion.span>{display}</motion.span>;
+    const timer = setInterval(() => {
+      start += increment;
+
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [end, duration]);
+
+  return <>{count}</>;
 };
 
+
 const Home = () => {
- 
+//  const { ref, inView } = useInView({
+//   triggerOnce: true,
+//   threshold: 0.3,
+// });
  const [activeIndex, setActiveIndex] = useState(0);
   const [current, setCurrent] = useState(0);
 const slides = [
@@ -127,6 +143,7 @@ const activeProject = projects[activeIndex];
 
 
  
+ 
 
 // Inside your component:
 useEffect(() => {
@@ -172,7 +189,7 @@ useEffect(() => {
       <section className="about">
   <div className="about-left">
     <div className="image-container">
-      <img src="https://images.unsplash.com/photo-1690473768476-44b5cebb7d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTl8fGJ1aWxkZXJzfGVufDB8fDB8fHww" alt="Construction" />
+      <img src="https://plus.unsplash.com/premium_photo-1682142654954-d0c3783cb019?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fGJ1aWxkZXJzfGVufDB8fDB8fHww" alt="Construction" />
       {/* Overlay Box */}
       <div className="experience-box">
         <h3>34</h3>
@@ -203,32 +220,33 @@ useEffect(() => {
       {/* COUNTER SECTION */}
 
       <section className="counter-section">
-        <div className="counter-box">
-          <h3>+3200</h3>
-          <p>Project Completed</p>
-        </div>
+  <div className="counter-box">
+    <h3>+<AnimatedCounter end={3200} /></h3>
+    <p>Project Completed</p>
+  </div>
 
-        <div className="counter-box">
-          <h3>+500</h3>
-          <p>Work Employed</p>
-        </div>
+  <div className="counter-box">
+    <h3>+<AnimatedCounter end={500} /></h3>
+    <p>Work Employed</p>
+  </div>
 
-        <div className="counter-box">
-          <h3>+900</h3>
-          <p>Happy Customers</p>
-        </div>
+  <div className="counter-box">
+    <h3>+<AnimatedCounter end={900} /></h3>
+    <p>Happy Customers</p>
+  </div>
 
-        <div className="counter-box">
-          <h3>+2800</h3>
-          <p>Painting Services</p>
-        </div>
-      </section>
+  <div className="counter-box">
+    <h3>+<AnimatedCounter end={2800} /></h3>
+    <p>Painting Services</p>
+  </div>
+</section>
 
       {/* SERVICES TITLE */}
-    <section className="section-wrapper">
+   <section className="section-wrapper">
 
   <div className="section-header">
     <span>Our Services</span>
+
     <h2>
       We Provide For <br />
       Superior Construction Service
@@ -236,34 +254,57 @@ useEffect(() => {
   </div>
 
   <section className="services-section">
-    <button className="carousel-btn" onClick={prevSlide}>
+
+    <button className="carousel-btn left" onClick={prevSlide}>
       ❮
     </button>
 
     <div className="services-grid">
       {services.slice(current, current + 3).map((service) => (
         <div key={service.id} className="service-card">
-          <img
-            src={service.image}
-            alt={service.title}
-            className="service-image"
-          />
+
+          <div className="image-wrapper">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="service-image"
+            />
+
+            <div className="icon-overlay">
+              🏗️
+            </div>
+          </div>
 
           <div className="card-content">
             <h3>{service.title}</h3>
-            <p>{service.icon}</p>
+
+            <p>
+              We provide high quality construction services with
+              experienced professionals and modern technology.
+            </p>
+
+            <div className="card-footer">
+              <span className="read-more">
+                Read More
+              </span>
+
+              <button className="plus-btn">
+                +
+              </button>
+            </div>
           </div>
+
         </div>
       ))}
     </div>
 
-    <button className="carousel-btn" onClick={nextSlide}>
+    <button className="carousel-btn right" onClick={nextSlide}>
       ❯
     </button>
+
   </section>
 
 </section>
-
 
    
 

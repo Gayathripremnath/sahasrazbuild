@@ -38,3 +38,165 @@
 /* --- Bottom Bar --- */
 .footer-bottom { background: red; color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; }
 .social-icons { display: flex; gap: 20px; }
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+/* Laptop */
+@media (max-width: 1200px) {
+
+  .footer-grid{
+    grid-template-columns: repeat(2,1fr);
+    gap:40px;
+  }
+
+  .newsletter-area{
+    gap:30px;
+  }
+
+  .email-box{
+    width:400px;
+  }
+
+}
+
+
+/* Tablet */
+@media (max-width: 992px){
+
+  .footer-grid{
+    grid-template-columns: repeat(2,1fr);
+    padding:0 30px 50px;
+  }
+
+  .newsletter-area{
+    flex-direction:column;
+    text-align:center;
+    gap:30px;
+    padding:50px 30px;
+  }
+
+  .email-box{
+    width:100%;
+    max-width:550px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+  }
+
+}
+
+
+/* Mobile */
+@media (max-width:768px){
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+    padding:0 20px 40px;
+  }
+
+  .footer-col{
+    text-align:center;
+  }
+
+  .footer-col h4::after{
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+  .footer-col p{
+    justify-content:center;
+    gap:12px;
+    line-height:28px;
+    font-size:15px;
+  }
+
+  .news-item{
+    justify-content:center;
+    text-align:left;
+  }
+
+  .newsletter-area{
+    padding:40px 20px;
+  }
+
+  .newsletter-area h2{
+    font-size:28px;
+  }
+
+  .email-box{
+    width:100%;
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+    border-radius:15px;
+  }
+
+  .email-box input{
+    width:100%;
+    padding:12px;
+  }
+
+  .email-box button{
+    width:100%;
+    border-radius:8px;
+  }
+
+  .estimate-phone{
+    font-size:24px;
+  }
+
+  .request-btn{
+    width:100%;
+  }
+
+}
+
+
+/* Small Mobile */
+@media (max-width:480px){
+
+  .footer-container{
+    padding-top:40px;
+  }
+
+  .footer-col h4{
+    font-size:22px;
+  }
+
+  .footer-col p{
+    font-size:14px;
+    line-height:24px;
+  }
+
+  .news-item{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .news-item img{
+    width:80px;
+    height:80px;
+  }
+
+  .newsletter-area h2{
+    font-size:24px;
+  }
+
+  .footer-bottom{
+    padding:18px;
+    font-size:14px;
+  }
+
+  .social-icons{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+  }
+
+}
