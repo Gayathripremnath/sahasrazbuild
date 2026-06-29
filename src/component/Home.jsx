@@ -4,6 +4,12 @@ import React from "react";
 import { FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 import { motion, useSpring, useTransform } from 'framer-motion';
+import about from '../assets/aboutimg.jpg';
+import slider from "../assets/slider.jpg";
+import slider2 from "../assets/slider2.jpg";
+import slider3 from "../assets/slider3.jpg"
+import project from "../assets/project.jpg";
+import project2 from "../assets/project2.jpg";
 
 import "./Home.css";
 
@@ -45,22 +51,19 @@ const Home = () => {
   const [current, setCurrent] = useState(0);
 const slides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1595844730289-b248c919d6f9?auto=format&fit=crop&q=60",
+    image: slider,
     title: "Modern Construction Solutions",
     description:
       "Building your dream project with quality and trust.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1652272161010-4d3b3aeb15ab?auto=format&fit=crop&q=60",
+    image: slider2,
     title: "Innovative Building Designs",
     description:
       "Creating modern spaces with excellence and innovation.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1693639435051-d58ac86db299?auto=format&fit=crop&q=60",
+    image: slider3 ,
     title: "Trusted Construction Experts",
     description:
       "Delivering high-quality projects on time and within budget.",
@@ -123,9 +126,9 @@ const services = [
   },
 ];
 const projects = [
-  { id: 1, title: "Hilix Compund Villa", category: "Construction", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
-  { id: 2, title: "Modern Skyscraper", category: "Architecture", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: "https://images.unsplash.com/photo-1527199768775-bdabf8b32f61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
-  { id: 3, title: "Hilix Compund Villa", category: "Architecture", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: "https://images.unsplash.com/photo-1527199768775-bdabf8b32f61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGJ1aWxkZXJzfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
+  { id: 1, title: "Hilix Compund Villa", category: "Construction", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: project, thumbs: [project, "https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
+  { id: 2, title: "Modern Skyscraper", category: "Architecture", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: project2, thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
+  { id: 3, title: "Hilix Compund Villa", category: "Architecture", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: "https://images.unsplash.com/photo-1668911494509-14baf3b42fda?auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGhvdXNlfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
 
   // Add more as needed
 ];
@@ -189,8 +192,7 @@ useEffect(() => {
       <section className="about">
   <div className="about-left">
     <div className="image-container">
-      <img src="https://plus.unsplash.com/premium_photo-1682142654954-d0c3783cb019?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fGJ1aWxkZXJzfGVufDB8fDB8fHww" alt="Construction" />
-      {/* Overlay Box */}
+<img src={about} alt="Construction" width={650} height={450} />      {/* Overlay Box */}
       <div className="experience-box">
         <h3>34</h3>
         <p>YEARS OF<br/>EXPERIENCE</p>

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Get In Touch</h4>
           <p><FaMapMarkerAlt color="red"/> ThemeForest, Envanto HQ, 24 Fifth st., Los Angeles, USA</p>
-          <p><FaEnvelope color="red"/> Email : name@yourmail.com</p>
+          <p><FaEnvelope color="red"/> sahasrabuilderstvm@gmail.com </p>
           <p><FaPhoneAlt color="red"/> Phone : +145 (03) 456 0000</p>
         </div>
         

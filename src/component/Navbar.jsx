@@ -33,7 +33,7 @@ const Navbar = () => {
 
       <div className="sub-nav">
         <div className="contact-info">
-          <span>✉ sahasra@gmail.com</span>
+          <span>✉sahasrabuilderstvm@gmail.com</span>
           <span>📞 (+099) 565 54515</span>
           <span>🕒 Sat - Sun 08.00 to 14.00</span>
         </div>
