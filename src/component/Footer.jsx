@@ -7,10 +7,12 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-col">
           <h4>Get In Touch</h4>
-          <p><FaMapMarkerAlt color="#76674c"/> ThemeForest, Envanto HQ, 24 Fifth st., Los Angeles, USA</p>
+          <p><FaMapMarkerAlt color="#76674c"/>SAHASRA BUILDERS Thiruvananthapuram </p>
           <p><FaEnvelope color="#76674c"/> sahasrabuilderstvm@gmail.com </p>
-          <p><FaPhoneAlt color="#76674c"/> Phone : +145 (03) 456 0000</p>
-        </div>
+<p>
+  <FaPhoneAlt color="#76674c" /> 
+  <a href="tel:+919496242633">+91 94962 42633</a>
+</p>        </div>
         
         <div className="footer-col">
           <h4>Our Services</h4>
@@ -34,8 +36,10 @@ const Footer = () => {
 
         <div className="footer-col">
           <h4>Get Free Estimate</h4>
-          <h2 className="estimate-phone">123-456-78910</h2>
-          <button className="request-btn">Request With Online Form</button>
+        <h2 className="estimate-phone">
+          <a href="tel:+919496242633">+91 94962 42633</a>
+        </h2>       
+   <button className="request-btn">Request With Online Form</button>
         </div>
       </div>
 

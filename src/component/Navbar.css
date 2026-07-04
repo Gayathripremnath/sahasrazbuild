@@ -92,7 +92,14 @@
   border-bottom-left-radius: 20px;
   margin-left:54.8%; 
 }
+span a {
+  color: inherit;
+  text-decoration: none;
+}
 
+span a:hover {
+  color: #06344c;
+}
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .navbar-container { left: 5%; width: 90%; }
