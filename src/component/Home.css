@@ -539,7 +539,7 @@ height:260px;
 .project-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.65);
+    background:rgba(0, 0, 0, 0.533);
 
     display:flex;
     flex-direction:column;
@@ -592,7 +592,7 @@ height:260px;
 
 .project-overlay p{
     font-size:15px;
-    color:#f4c04d;
+    color:#d9c399;
     text-transform:uppercase;
     letter-spacing:1px;
     margin-bottom:12px;
@@ -614,7 +614,7 @@ height:260px;
     height:60px;
     border:none;
     border-radius:50%;
-    background:#d8a73d;
+    background:#76674c;
     color:#fff;
     font-size:34px;
     cursor:pointer;
@@ -624,7 +624,7 @@ height:260px;
 .project-overlay .view-btn:hover{
     transform:rotate(90deg);
     background:#fff;
-    color:#d8a73d;
+    color:#042251;
 }
 
 /* ================= BOTTOM BUTTON ================= */
@@ -636,6 +636,8 @@ height:260px;
 }
 
 .more-btn{
+  /* background:#021a3c51 !important; */
+  border-radius:50px;
     display:flex;
     align-items:center;
     gap:18px;
@@ -651,7 +653,7 @@ height:260px;
     width:52px;
     height:52px;
     border-radius:50%;
-    background:#d8a73d;
+    background:#76674c;
     color:#fff;
     display:flex;
     justify-content:center;
@@ -662,6 +664,8 @@ height:260px;
 
 .more-btn:hover span{
     transform:rotate(90deg);
+    color:#052a4f;
+    background:#fff;
 }
 
 /* ================= RESPONSIVE ================= */
