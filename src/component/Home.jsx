@@ -47,7 +47,6 @@ const Home = () => {
 //   triggerOnce: true,
 //   threshold: 0.3,
 // });
- const [activeIndex, setActiveIndex] = useState(0);
   const [current, setCurrent] = useState(0);
 const slides = [
   {
@@ -126,14 +125,44 @@ const services = [
   },
 ];
 const projects = [
-  { id: 1, title: "Hilix Compund Villa", category: "Construction", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: project, thumbs: [project, "https://images.unsplash.com/photo-1647735282077-c12699af40be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
-  { id: 2, title: "Modern Skyscraper", category: "Architecture", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: project2, thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
-  { id: 3, title: "Hilix Compund Villa", category: "Architecture", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus provident veniam earum animi modi ipsum, cupiditate ullam numquam porro iusto nisi, ipsa blanditiis qui doloremque nam quisquam vero cumque.", img: "https://images.unsplash.com/photo-1668911494509-14baf3b42fda?auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGhvdXNlfGVufDB8fDB8fHww", thumbs: ["https://images.unsplash.com/photo-1593313637552-29c2c0dacd35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1aWxkZXJzfGVufDB8fDB8fHww", "https://images.unsplash.com/photo-1667207590884-d6dda4321644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA2fHxidWlsZGVyc3xlbnwwfHwwfHx8MA%3D%3D"] },
-
-  // Add more as needed
+  {
+    id: 1,
+    title: "Luxury Villa",
+    category: "Construction",
+    img: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800",
+  },
+  {
+    id: 2,
+    title: "Modern House",
+    category: "Architecture",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
+  },
+  {
+    id: 3,
+    title: "Office Building",
+    category: "Construction",
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+  },
+  {
+    id: 4,
+    title: "Commercial Complex",
+    category: "Building",
+    img: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=800",
+  },
+  {
+    id: 5,
+    title: "Apartment",
+    category: "Residential",
+    img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800",
+  },
+  {
+    id: 6,
+    title: "Bridge Project",
+    category: "Infrastructure",
+    img: "https://images.unsplash.com/photo-1448630360428-65456885c650?w=800",
+  },
 ];
-
-const activeProject = projects[activeIndex];
+const [hovered, setHovered] = useState(null);
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % services.length);
   };
@@ -143,18 +172,6 @@ const activeProject = projects[activeIndex];
       prev === 0 ? services.length - 1 : prev - 1
     );
   };
-
-
- 
- 
-
-// Inside your component:
-useEffect(() => {
-  const interval = setInterval(() => {
-    setActiveIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-  }, 4000); // Changes every 4 seconds
-  return () => clearInterval(interval);
-}, []);
 
 useEffect(() => {
   const interval = setInterval(() => {
@@ -181,9 +198,7 @@ useEffect(() => {
 
     <p>{slides[current].description}</p>
 
-    <button className="view-project-btn">
-      View Projects
-    </button>
+    
   </div>
 </section>
 
@@ -197,8 +212,6 @@ useEffect(() => {
         <h3>34</h3>
         <p>YEARS OF<br/>EXPERIENCE</p>
       </div>
-      {/* Red Diagonal Strip */}
-      <div className="red-diagonal-strip"></div>
     </div>
   </div>
 
@@ -272,9 +285,7 @@ useEffect(() => {
               className="service-image"
             />
 
-            <div className="icon-overlay">
-              🏗️
-            </div>
+           
           </div>
 
           <div className="card-content">
@@ -321,7 +332,7 @@ useEffect(() => {
               <span></span>
               <span></span>
             </div>
-            <span className="subtitle">Testimonial For Us</span>
+            <span className="subtitle-test" style={{'color':'#ffffff'}}>Testimonial For Us</span>
             <h2 className="title">What Coustomer Says <br /> About Us</h2>
           </div>
           
@@ -363,37 +374,40 @@ useEffect(() => {
   {/* Added Headers */}
  
 <section className="projects-section">
-   <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
-    <span style={{ color: 'red', fontWeight: 'bold', textTransform: 'uppercase' }}>
-      Our Recent Projects
-    </span>
-    <h2 style={{ fontSize: '40px', marginTop: '10px' }}>
-      Our Special Projects
-    </h2>
+
+  <div className="section-title">
+    <span>OUR RECENT PROJECTS</span>
+    <h2>Our Special Projects </h2>
   </div>
 
-  <div className="project-content-wrapper" style={{ display: 'flex', gap: '60px', alignItems: 'center' }}>
-    {/* Left side: Text Details */}
-    <div className="project-left">
-      <span className="subtitle">{activeProject.category}</span>
-      <h2>{activeProject.title}</h2>
-      <p>{activeProject.desc}</p>
-      <button className="read-more">Read More +</button>
-      
-      {/* Thumbnails */}
-      <div className="thumbs">
-        {activeProject.thumbs.map((t, i) => <img key={i} src={t} alt="thumb" />)}
+  <div className="project-grid">
+  {projects.map((item) => (
+    <div
+      key={item.id}
+      className={`project-card ${hovered === item.id ? "active" : ""}`}
+      onMouseEnter={() => setHovered(item.id)}
+      onMouseLeave={() => setHovered(null)}
+    >
+      <img src={item.img} alt={item.title} />
+
+      <div className="project-overlay">
+        <p>{item.category}</p>
+        <h3>{item.title}</h3>
+
+        <button className="view-btn">+</button>
       </div>
     </div>
+  ))}
+</div>
+<div className="projects-footer">
+  <button className="more-btn">
+    View More
+    <span>+</span>
+  </button>
+</div>
 
-    {/* Right side: Large Featured Image */}
-    <div className="project-right">
-      <img src={activeProject.img} alt="Main Project" className="featured-img" />
-    </div>
-  </div>
 </section>
-
-
+{/* 
 <section className="news-section">
   <div className="section-heading">
     <span>Latest News</span>
@@ -413,8 +427,8 @@ useEffect(() => {
       <p>15 Dec 2026</p>
     </div>
   </div>
-</section>
-
+</section> */}
+{/* 
 
 <section className="skills-section">
   <div className="skills-left">
@@ -471,7 +485,7 @@ useEffect(() => {
     <img src="https://images.unsplash.com/photo-1693639435051-d58ac86db299?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1aWxkZXJzJTIwcHJvamVjdHxlbnwwfHwwfHx8Mg%3D%3D" alt="" />
     <img src="https://images.unsplash.com/photo-1713593930871-e21d7f9ef4a1?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1aWxkZXJzfGVufDB8fDB8fHwy" alt="" />
   </div>
-</section>
+</section> */}
 
 
 
@@ -484,7 +498,6 @@ useEffect(() => {
   </div>
 
   <div className="quote-form">
-    <span>Request Quote</span>
 
     <h2>Request A Quote</h2>
 

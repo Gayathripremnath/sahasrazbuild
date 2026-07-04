@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-col">
           <h4>Get In Touch</h4>
-          <p><FaMapMarkerAlt color="red"/> ThemeForest, Envanto HQ, 24 Fifth st., Los Angeles, USA</p>
-          <p><FaEnvelope color="red"/> sahasrabuilderstvm@gmail.com </p>
-          <p><FaPhoneAlt color="red"/> Phone : +145 (03) 456 0000</p>
+          <p><FaMapMarkerAlt color="#76674c"/> ThemeForest, Envanto HQ, 24 Fifth st., Los Angeles, USA</p>
+          <p><FaEnvelope color="#76674c"/> sahasrabuilderstvm@gmail.com </p>
+          <p><FaPhoneAlt color="#76674c"/> Phone : +145 (03) 456 0000</p>
         </div>
         
         <div className="footer-col">
