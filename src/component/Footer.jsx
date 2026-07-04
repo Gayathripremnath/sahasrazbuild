@@ -14,10 +14,10 @@ const Footer = () => {
         
         <div className="footer-col">
           <h4>Our Services</h4>
-          <p>» Chemical Engineering Projects</p>
-          <p>» Mining Engineering Construction</p>
-          <p>» Engineering Welding Engineering</p>
-          <p>» Space Program XYZ</p>
+          <p>» Architecture Design</p>
+          <p>» Interior Design</p>
+          <p>» Commercial Construction</p>
+          <p>» Residential Construction</p>
         </div>
 
         <div className="footer-col">
