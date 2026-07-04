@@ -491,10 +491,15 @@ useEffect(() => {
 
 <section className="quote-section">
   <div className="quote-map">
-    <iframe
-      title="map"
-      src="https://maps.google.com/maps?q=kozhikode&t=&z=13&ie=UTF8&iwloc=&output=embed"
-    ></iframe>
+   <iframe
+  title="map"
+  src="https://maps.google.com/maps?q=SAHASRA%20BUILDERS%2C%20Akshaya%20Building%20Park%2C%2025%20A%2C%20Junction%2C%20Dhanuvachapuram%2C%20Kerala%20695503&z=15&output=embed"
+  width="100%"
+  height="450"
+  style={{ border: 0 }}
+  loading="lazy"
+  allowFullScreen
+></iframe>
   </div>
 
   <div className="quote-form">
