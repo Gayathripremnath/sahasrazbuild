@@ -1142,7 +1142,8 @@ img { max-width: 100%; height: auto; }
 
 /* Tablet & Smaller Laptops (1024px and below) */
 @media (max-width: 1024px) {
-  .about, .skills-section, .projects-section { flex-direction: column; gap: 20px; }
+  .projects-section { padding: 80px 5%; }
+  .about, .skills-section{ flex-direction: column; gap: 20px; }
   .counter-section { grid-template-columns: repeat(2, 1fr); padding: 40px; }
   .testimonial-wrapper { grid-template-columns: repeat(2, 1fr); }
   .project-left { width: 100%; }
@@ -1316,12 +1317,73 @@ img { max-width: 100%; height: auto; }
     right: 0;
   }
 }
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
 
+  .projects-section {
+    margin-top: 360px !important;
+    padding: 45px 15px;
+  }
+
+  .section-title span {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .project-overlay p {
+    font-size: 12px;
+  }
+
+  .project-overlay h3 {
+    font-size: 18px;
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .project-overlay .view-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+
+  .projects-footer {
+    margin-top: 25px;
+  }
+
+  .more-btn {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  .more-btn span {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
 /* =========================
    MOBILE (768px)
 ========================= */
 @media (max-width: 768px) {
-
+.projects-section {
+    padding: 60px 20px;
+  }
   .hero {
     height: 80vh;
   }
