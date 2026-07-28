@@ -1,7 +1,7 @@
 import React from "react";
 // import CountUp  from "react-countup";
 // import { useInView } from "react-intersection-observer";
-import { FaQuoteRight, FaChevronLeft, FaChevronRight, FaUserCircle } from 'react-icons/fa';
+import { FaQuoteRight, FaChevronLeft, FaChevronRight, FaUser } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 import { motion, useSpring, useTransform } from 'framer-motion';
 import about from '../assets/aboutimg.jpg';
@@ -356,7 +356,7 @@ useEffect(() => {
               <div className="divider"></div>
               
               <div className="profile-info">
-                <FaUserCircle className="profile-img" />
+                <div className="profile-icon-wrap"><FaUser /></div>
                 <div className="profile-details">
                   <h4>{item.name}</h4>
                   <span>{item.role}</span>

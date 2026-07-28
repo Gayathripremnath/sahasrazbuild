@@ -7,10 +7,10 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-col">
           <h4>Get In Touch</h4>
-          <p><FaMapMarkerAlt color="#76674c"/>SAHASRA BUILDERS Thiruvananthapuram </p>
-          <p><FaEnvelope color="#76674c"/> sahasrabuilderstvm@gmail.com </p>
+          <p><FaMapMarkerAlt color="#f5d27a"/>SAHASRA BUILDERS Thiruvananthapuram </p>
+          <p><FaEnvelope color="#f5d27a"/> sahasrabuilderstvm@gmail.com </p>
 <p>
-  <FaPhoneAlt color="#76674c" /> 
+  <FaPhoneAlt color="#f5d27a" /> 
   <a href="tel:+919496242633">+91 94962 42633</a>
 </p>        </div>
         
