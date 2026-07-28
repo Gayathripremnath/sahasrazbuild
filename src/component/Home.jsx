@@ -1,7 +1,7 @@
 import React from "react";
 // import CountUp  from "react-countup";
 // import { useInView } from "react-intersection-observer";
-import { FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaQuoteRight, FaChevronLeft, FaChevronRight, FaUserCircle } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 import { motion, useSpring, useTransform } from 'framer-motion';
 import about from '../assets/aboutimg.jpg';
@@ -50,19 +50,19 @@ const Home = () => {
   const [current, setCurrent] = useState(0);
 const slides = [
   {
-    image: slider,
+    image: "https://images.unsplash.com/photo-1728721529009-bfaab6fcc8e6?auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Modern Construction Solutions",
     description:
       "Building your dream project with quality and trust.",
   },
   {
-    image: slider2,
+    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Innovative Building Designs",
     description:
       "Creating modern spaces with excellence and innovation.",
   },
   {
-    image: slider3 ,
+    image: "https://images.unsplash.com/photo-1606402179428-a57976d71fa4?auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG91c2UlMjBhdCUyMG5pZ2h0fGVufDB8fDB8fHwy" ,
     title: "Trusted Construction Experts",
     description:
       "Delivering high-quality projects on time and within budget.",
@@ -356,7 +356,7 @@ useEffect(() => {
               <div className="divider"></div>
               
               <div className="profile-info">
-                <img src={item.image} alt={item.name} className="profile-img" />
+                <FaUserCircle className="profile-img" />
                 <div className="profile-details">
                   <h4>{item.name}</h4>
                   <span>{item.role}</span>
