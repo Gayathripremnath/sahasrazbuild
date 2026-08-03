@@ -23,6 +23,7 @@
 
 /* --- Newsletter Section --- */
 .newsletter-area {
+  color:#a8742a;
   background-size: cover;
   padding: 60px 5%;
   display: flex;

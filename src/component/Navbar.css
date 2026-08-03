@@ -81,7 +81,18 @@
 /* Base Styles */
 .navbar-container { position: absolute; top: 30px; left: 60px; width: 90%; z-index: 1000; font-family: sans-serif; }
 
-.top-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 5%; background: #000; border-top-left-radius: 40px; }
+.top-nav { 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  padding: 20px 5%; 
+  /* background: linear-gradient(
+  to bottom,
+  rgba(255, 255, 255, 0.353),
+  rgb(0, 0, 0)
+); */
+  background: #080808;
+  border-top-left-radius: 40px; }
 
 .menu-toggle { display: none; font-size: 28px; cursor: pointer; }
 

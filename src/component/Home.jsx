@@ -1,6 +1,4 @@
 import React from "react";
-// import CountUp  from "react-countup";
-// import { useInView } from "react-intersection-observer";
 import { FaQuoteRight, FaChevronLeft, FaChevronRight, FaUser } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 import { motion, useSpring, useTransform } from 'framer-motion';
